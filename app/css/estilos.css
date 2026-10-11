@@ -1,0 +1,62 @@
+/* Estilo sobrio en blanco y negro, pensado primero para celular */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, "Liberation Sans", Helvetica, sans-serif; font-size: 16px; color: #000; background: #fff; line-height: 1.4; }
+header { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-bottom: 2px solid #000; }
+.marca { font-weight: bold; font-size: 20px; }
+.marca span { font-weight: normal; font-size: 14px; }
+.btn-menu { display: none; }
+nav { display: flex; flex-wrap: wrap; border-bottom: 1px solid #000; }
+nav a { padding: 10px 12px; color: #000; text-decoration: none; border-right: 1px solid #000; }
+nav a.activo { background: #000; color: #fff; }
+main { padding: 14px; max-width: 1100px; margin: 0 auto; }
+h1 { font-size: 22px; margin: 4px 0 12px; }
+h2 { font-size: 18px; margin: 22px 0 8px; border-bottom: 1px solid #000; padding-bottom: 3px; }
+p.ayuda { font-size: 14px; margin: 0 0 10px; }
+footer { font-size: 12px; text-align: center; padding: 16px; border-top: 1px solid #000; margin-top: 30px; }
+
+/* Tarjetas de indicadores */
+.indicadores { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.ind { border: 1px solid #000; padding: 10px; }
+.ind .valor { font-size: 28px; font-weight: bold; }
+.ind .nombre { font-size: 13px; }
+
+/* Tablas */
+.tabla { width: 100%; overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { border: 1px solid #000; padding: 6px 8px; text-align: left; vertical-align: top; }
+th { font-weight: bold; }
+td.num { text-align: right; }
+
+/* Alertas: sin color, con borde/inversión */
+.alerta { display: inline-block; padding: 1px 6px; font-weight: bold; font-size: 13px; border: 1px solid #000; }
+.alerta.VACIA, .alerta.LLENA, .alerta.REPONER { background: #000; color: #fff; }
+.alerta.OK { background: #fff; color: #000; }
+.estado { font-size: 13px; border: 1px dashed #000; padding: 0 4px; white-space: nowrap; }
+
+/* Formularios */
+form { border: 1px solid #000; padding: 12px; margin: 8px 0 14px; }
+form h3 { margin: 0 0 8px; font-size: 16px; }
+label { display: block; font-size: 14px; margin: 8px 0 3px; font-weight: bold; }
+input, select, textarea { width: 100%; font: inherit; padding: 8px; border: 1px solid #000; background: #fff; color: #000; border-radius: 0; }
+textarea { min-height: 60px; }
+.fila { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.checks label { font-weight: normal; display: flex; align-items: center; gap: 6px; }
+.checks input { width: auto; }
+button, .boton { font: inherit; font-weight: bold; padding: 8px 14px; border: 2px solid #000; background: #000; color: #fff; cursor: pointer; margin-top: 10px; border-radius: 0; }
+button.sec { background: #fff; color: #000; }
+button.chico { padding: 4px 8px; font-size: 13px; margin: 2px 0; }
+button:disabled { opacity: .5; cursor: default; }
+
+.aviso { margin: 10px 14px 0; padding: 10px; border: 2px solid #000; font-weight: bold; }
+.aviso.error { border-style: dashed; }
+
+/* Celular */
+@media (max-width: 700px) {
+  .btn-menu { display: inline-block; margin: 0; background: #fff; color: #000; }
+  nav { display: none; flex-direction: column; }
+  nav.abierto { display: flex; }
+  nav a { border-right: 0; border-bottom: 1px solid #000; }
+  .fila { grid-template-columns: 1fr; }
+  main { padding: 10px; }
+  table { font-size: 13px; }
+}
